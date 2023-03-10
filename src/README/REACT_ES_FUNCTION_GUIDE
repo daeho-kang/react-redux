@@ -1,0 +1,40 @@
+React ECMAScript
+
+1. 스테이트, Redux 스토어에서 관리하는 상태 데이터입니다.
+Provider로 store를 전역변수로 관리하게 합니다.
+<Provider store={store}>
+    <App />
+</Provider>
+
+2. 액션
+-액션은 어플리케이션에서 상태변경을 설명하는 정보를 스토어로 보내는 JavaScript 객체로
+Redux에 알려(dispatch)변화를 이끌어냅니다.
+상태 값을 변경할경우, 교체할 상태값(payload)를 리듀서 함수에 보낼 수 있습니다.
+
+export const ADD_TO_CART = "ADD_TO_CART"
+export const REMOVE_TO_CART = "REMOVE_TO_CART"
+
+export const addTOCart =(data)=>{
+    // console.warn("action",data)
+    return{
+        type:ADD_TO_CART,
+        data:data
+    }
+}
+
+export const removeTOCart =(data)=>{
+    // console.warn("action",data)
+    return{
+        type:REMOVE_TO_CART,
+        // data:data
+    }
+}
+
+애플리케이션 상태 트리를 변경하는 유일한 방법은 액션을 보내는것(dispatching action)입니다.
+
+
+3. 리듀서
+모든 Redux 애플리케이션은 공통점이 있습니다.
+바로 리듀서(reducer)를 구현해야 한다는 점입니다.
+리듀서란 ? "애플리케이션 상태를 교체하는 함수"를 말합니다.
+"이전 상태(prevState)"를 '새로운 상태(state)'로 교체(return)합니다.

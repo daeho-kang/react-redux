@@ -15,4 +15,4 @@ const mapDispatchToProps=dispatch=>({
 
 //Header로 prop없이 상태관리하게 state를 보내주는듯합니다.
 export default connect(mapStateToProps,mapDispatchToProps)(Header)
-// export default Home
+// export default Header
